@@ -2,10 +2,11 @@
 from bs4 import BeautifulSoup
 import requests
 import random
+
 from lxml.html import fromstring
 
 from material import Material
-
+import setting 
 
 class Soup:
 
@@ -36,11 +37,13 @@ class Soup:
 
                     continue
 
-                # Using lxml parser
-                soup_lxml = BeautifulSoup(response.content, "lxml") 
+                if(setting.LXML_PARSER):
+                    # Using lxml parser
+                    soup = BeautifulSoup(response.content, "lxml")
 
-                # Using html parser
-                soup_html =  BeautifulSoup(response.content, "html.parser") 
+                if(setting.HTML_PARSER):
+                    # Using html parser
+                    soup =  BeautifulSoup(response.content, "html.parser") 
 
                 break
 
@@ -49,10 +52,10 @@ class Soup:
                 self.fail_count += 1
 
                 # if the number of fail count is more than 50, reset proxies pool
-                if (self.fail_count >= 10):
+                if (self.fail_count >= setting.FAIL_COUNT):
                     proxies = self.m.getFreeProxies()
 
 
-        return soup_lxml, soup_html, proxies
+        return soup, proxies
 
  

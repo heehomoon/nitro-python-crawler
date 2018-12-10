@@ -14,6 +14,10 @@ class Material:
         self.user_agent_list = f.read().splitlines()    
         f.close()
 
+        f = open('url_list.txt', 'r')
+        self.urls = f.read().splitlines()    
+        f.close()
+
     def getFreeProxies(self):
 
         headers = requests.utils.default_headers()
@@ -76,8 +80,4 @@ class Material:
 
     def getUrls(self):
 
-        f = open('url_list.txt', 'r')
-        urls = f.read().splitlines()    
-        f.close()
-
-        return urls
+        return self.urls

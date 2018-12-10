@@ -3,6 +3,7 @@
 from soup import Soup
 from material import Material
 
+import setting 
 import queue
 import threading
 
@@ -29,32 +30,34 @@ class myCrawlThread(threading.Thread):
             else:
                 getCrawledData(urlQueue.get_nowait())
 
+
 def getCrawledData(url):
 
     global proxies
     global user_agents
 
     s = Soup()
-    soup_lxml, soup_html, proxies = s.getSoup(url, user_agents, proxies)
+    soup, proxies = s.getSoup(url, user_agents, proxies)
 
     title = ""
 
-    if(soup_lxml.find('span', {'id': 'productTitle'})):
-        title = soup_lxml.find('span', {'id': 'productTitle'}).text
-    elif(soup_lxml.find('span', {'id': 'ebooksProductTitle'})):
-        title = soup_lxml.find('span', {'id': 'ebooksProductTitle'}).text
-    elif(soup_lxml.find('span', {'id': 'fineArtTitle'})):
-        title = soup_lxml.find('span', {'id': 'fineArtTitle'}).text
+    if(soup.find('span', {'id': 'productTitle'})):
+        title = soup.find('span', {'id': 'productTitle'}).text
+    elif(soup.find('span', {'id': 'ebooksProductTitle'})):
+        title = soup.find('span', {'id': 'ebooksProductTitle'}).text
+    elif(soup.find('span', {'id': 'fineArtTitle'})):
+        title = soup.find('span', {'id': 'fineArtTitle'}).text
 
     title = title.strip()
 
     print(title)
 
+
 def startCrawling():
 
     threads = list()
 
-    for i in range(0, 10):
+    for i in range(0, setting.THREAD_NUM):
         threads.append(myCrawlThread())
 
     for thread in threads:
@@ -64,6 +67,5 @@ def startCrawling():
         thread.join()
 
 
-# queue에 url 넣고 
 startCrawling()
 
