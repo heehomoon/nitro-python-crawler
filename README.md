@@ -12,6 +12,11 @@ nitro-python-crawler is web crawler, used to crawl websites and extract structur
 * Python 2.7 or Python 3.4+
 * Works on Linux, Windows, Mac OSX
 
+### Python3 Libraries
+* beautifulsoup4
+* python3-lxml
+* requests
+
 Install
 =======
 
