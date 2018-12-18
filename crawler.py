@@ -2,15 +2,16 @@
 
 from soup import Soup
 from material import Material
+from extractor import Extractor
 
 import setting 
 import queue
 import threading
 
 m = Material()
-
 proxies = m.getFreeProxies()
-user_agents = m.getUserAgents()  
+user_agents = m.getUserAgents() 
+
 
 # Put url list into queue
 urls =  m.getUrls()
@@ -38,19 +39,10 @@ def getCrawledData(url):
 
     s = Soup()
     soup, proxies = s.getSoup(url, user_agents, proxies)
+    
+    e = Extractor()
+    title = e.getProdcutTitle(soup)
 
-    title = ""
-
-    if(soup.find('span', {'id': 'productTitle'})):
-        title = soup.find('span', {'id': 'productTitle'}).text
-    elif(soup.find('span', {'id': 'ebooksProductTitle'})):
-        title = soup.find('span', {'id': 'ebooksProductTitle'}).text
-    elif(soup.find('span', {'id': 'fineArtTitle'})):
-        title = soup.find('span', {'id': 'fineArtTitle'}).text
-
-    title = title.strip()
-
-    print(title)
 
 
 def startCrawling():
