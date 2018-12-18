@@ -8,13 +8,13 @@ import setting
 import queue
 import threading
 
+# Bring proxies, user_agents, urls
 m = Material()
 proxies = m.getFreeProxies()
 user_agents = m.getUserAgents() 
-
+urls =  m.getUrls()
 
 # Put url list into queue
-urls =  m.getUrls()
 urlQueue = queue.Queue()
 [urlQueue.put(url) for url in urls]
 
@@ -30,6 +30,7 @@ class myCrawlThread(threading.Thread):
                 break
             else:
                 getCrawledData(urlQueue.get_nowait())
+
 
 
 def getCrawledData(url):
