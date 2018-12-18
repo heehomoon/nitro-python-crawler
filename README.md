@@ -1,3 +1,21 @@
 # nitro-python-crawler
-Multi-threading Python3 Web Crawler
+nitro-python-crawler is web crawler, used to crawl websites and extract structured data from their pages.
+
+### Overview
+
+* Multi-threading 
+* Free-proxy
+* Rotate IP and User-agents
+
+### Requirements
+
+* Python 2.7 or Python 3.4+
+* Works on Linux, Windows, Mac OSX
+
+Install
+=======
+
+
+
+
 
