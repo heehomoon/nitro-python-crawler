@@ -1,5 +1,7 @@
-# nitro-python-crawler
+nitro-python-crawler
+====================
 nitro-python-crawler is web crawler, used to crawl websites and extract structured data from their pages.
+
 
 ### Overview
 
@@ -17,8 +19,7 @@ nitro-python-crawler is web crawler, used to crawl websites and extract structur
 * python3-lxml
 * requests
 
-Install
-=======
+
 
 
 
