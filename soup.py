@@ -29,8 +29,8 @@ class Soup:
                 cookies = dict(session.get(url).cookies)
                 response = session.post(url, headers=headers, proxies={"https": proxy}, timeout=(1.2, 5), cookies=cookies)
 
-                # If there is bot detection statement => True
-                if(False):                
+                # If response status code is not 200
+                if(response.status_code != 200):                
                 
                     if (proxy in proxies):
                         proxies.remove(proxy)   # Remove proxy which got detected from proxies set 

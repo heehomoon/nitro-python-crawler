@@ -44,6 +44,9 @@ def getCrawledData(url):
     e = Extractor()
     title = e.getProdcutTitle(soup)
 
+    # If it failed to crawl data, re-crawl by put url into queue again
+    if(title == ""):
+        urlQueue.put(url)
 
 
 def startCrawling():
