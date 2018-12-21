@@ -21,7 +21,15 @@ nitro-python-crawler is web crawler, used to crawl websites and extract structur
 * python3-lxml
 * beautifulsoup4
 
-### Installing Python Modules Using pip
+
+### Installing Python Modules with pip
+> Python 2.7.9+ and 3.4+ ship with pip
+
+On Ubuntu(and similar Linux systems):
+
+    sudo pip3 install requests
+    sudo pip3 install lxml
+    sudo pip3 install bs4
 
 On Windows:
 
@@ -29,11 +37,6 @@ On Windows:
     python -m pip install lxml
     python -m pip install bs4
 
-On Ubuntu(and similar Linux systems):
-
-    sudo pip3 install requests
-    sudo pip3 install lxml
-    sudo pip3 install bs4
 
 
 
