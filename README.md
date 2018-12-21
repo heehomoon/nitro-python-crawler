@@ -43,18 +43,18 @@ On Ubuntu(and similar Linux systems):
 > Put urls to crawl in the url_list.txt
 >
     $ vi url_list.txt
->
-    <pre><code>
+```
+    <code>
     https://www.amazon.com/dp/B0054LHI5A
     https://www.amazon.com/dp/B01LZ3RLPC
     https://www.amazon.com/dp/B00Y2CQRZY
-    </code></pre>
-
+    </code>
+```
 > Create a extractor method 
 >
     $ vi extractor.py
->   
-    <pre><code>
+```
+    <code>
     def getProdcutTitle(self, soup):
 
     title = ""
@@ -69,8 +69,8 @@ On Ubuntu(and similar Linux systems):
     title = title.strip()
 
     return title   
-    </code></pre>
-
+    </code>
+```
 > Execute
 >
     $ python3 crawler.py
