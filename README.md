@@ -44,17 +44,14 @@ On Ubuntu(and similar Linux systems):
 >
     $ vi url_list.txt
 ```
-    <code>
     https://www.amazon.com/dp/B0054LHI5A
     https://www.amazon.com/dp/B01LZ3RLPC
     https://www.amazon.com/dp/B00Y2CQRZY
-    </code>
 ```
 > Create a extractor method 
 >
     $ vi extractor.py
 ```
-    <code>
     def getProdcutTitle(self, soup):
 
     title = ""
@@ -69,7 +66,6 @@ On Ubuntu(and similar Linux systems):
     title = title.strip()
 
     return title   
-    </code>
 ```
 > Execute
 >
