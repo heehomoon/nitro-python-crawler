@@ -24,7 +24,7 @@ nitro-python-crawler is web crawler, used to crawl websites and extract structur
 
 ## Install for Python3
 
-1. Install modules
+1. **Install modules**
 > Python 2.7.9+ and 3.4+ ship with pip
 
 On Ubuntu(and similar Linux systems):
@@ -34,23 +34,23 @@ On Ubuntu(and similar Linux systems):
     $ sudo pip3 install bs4
 
 
-2. Git clone
+2. **Git clone**
 >
     $ git clone https://github.com/heehomoon/nitro-python-crawler.git
 
 
-3. How to use
+3. **How to use**
 > Put urls to crawl in the urllist.txt
 >
-    vi urllist.txt
+    $ vi urllist.txt
 
 > Create a extractor method 
 >
-    vi extractor.py
+    $ vi extractor.py
 
 > Execute
 >
-    python3 crawler.py
+    $ python3 crawler.py
 
 
 
