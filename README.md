@@ -41,12 +41,15 @@ On Ubuntu(and similar Linux systems):
 
 3. How to use
 > Put urls to crawl in the urllist.txt
+>
     vi urllist.txt
 
 > Create a extractor method 
+>
     vi extractor.py
 
 > Execute
+>
     python3 crawler.py
 
 
