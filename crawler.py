@@ -48,6 +48,8 @@ def getCrawledData(url):
     if(title == ""):
         urlQueue.put(url)
 
+    print(title)
+
 
 def startCrawling():
 
